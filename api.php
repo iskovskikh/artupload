@@ -9,7 +9,7 @@ if (is_file('../config.php')) {
 
 require_once(DIR_SYSTEM . 'startup.php');
 
-$application_config = 'catalog';
+$application_config = 'admin';
 
 $starttime = microtime(true);
 $registry = new Registry();
@@ -156,4 +156,4 @@ var_dump($api->model_catalog_category->getCategories(1019));
 
 
 $endtime = microtime(true);
-var_dump($endtime-$starttime);
+print('Программа выполнена за '.$endtime-$starttime);
