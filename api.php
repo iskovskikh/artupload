@@ -156,4 +156,4 @@ var_dump($api->model_catalog_category->getCategories(1019));
 
 
 $endtime = microtime(true);
-print('Программа выполнена за '.$endtime-$starttime);
+print('Программа выполнена за ' + $endtime-$starttime);
