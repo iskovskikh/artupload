@@ -141,18 +141,37 @@ $api = new Api($registry);
 
 $api->load->model('catalog/category');
 
+$data = [
+    'parent_id'		=> $api->model_catalog_category->getCategoryIdByHash(md5($parentid)),
+	'top'			=> '0',
+	'column'		=> '0',
+	'sort_order'	=> 0,
+	'status'		=> '1',
+	'myhash' 		=> md5($id),
+	'language_id' 	=> '2',
+	#'keyword' 		=> ($keyword == '') ? Translit::toUrl($name) : $keyword,
 
+	'category_description' => [
+		'2' => [
+			'name' 				=> $name,
+			'meta_title' 		=> $name,
+			'meta_description' 	=> $description,
+			'meta_keyword' 		=> $name,
+			'description' 		=> $description,
+			],
+		],
+	'category_filter' => [],
+	'category_layout' => [
+		'0' => '0',
+		],
+	'category_store' => [
+		'0' => '0',
+		],
+	];
+]
 
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
-var_dump($api->model_catalog_category->getCategories(1019));
+//$api->model_catalog_category->addCategories($data);
+
 
 
 $endtime = microtime(true);

@@ -28,13 +28,17 @@ tree = ET.parse("production.xml")
 
 # for child in root:
 # # 	print(child.tag, child.attrib)
-
+count = 0
 for group in tree.findall('Группы/Группа'):
+    count += 1
     print('Ид: %s' % (group.find('Ид').text))
     print('ИдРодителя: %s' % (group.find('ИдРодителя').text))
     print('Наименование: %s' % (group.find('Наименование').text))
-    print('-----')
+    print('------------------------')
+
+
+
 
 end_time = datetime.now()
-print('========')
-print('Программа выполнена за %s' % (end_time - ini_time))
+print('========================')
+print('Найдено %s категорий за %s' % (count, (end_time - ini_time)))
